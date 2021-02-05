@@ -6,6 +6,23 @@
 	<body>
 		<!-- <img src='./images/albert_einstein.jpg'> -->
 		<?php
+			function sortByDescName($a, $b) {
+			    return $a['name'] <=> $b['name'];
+			}
+
+			function sortByAscName($a, $b) {
+			    return $b['name'] <=> $a['name'];
+			}
+
+			function sortByYoung($a, $b) {
+			    return $a['age'] <=> $b['age'];
+			}
+
+			function sortByOld($a, $b) {
+			    return $b['age'] <=> $a['age'];
+			}
+
+
 			// names, images, age, birthday, and contact number
 			$contacts = array(
 				array("name"   => 'Barack Obama', 
@@ -59,18 +76,44 @@
 					  'bday'   => 'June 22, 1949', 
 					  'num'    => '09372167088')
 			);
+			if(isset($_GET['dir'])) {
+				if ($_GET['row'] == 'name' && $_GET['dir'] == 'desc') {
+					usort($contacts, 'sortByDescName');	
+				} elseif ($_GET['row'] == 'name' && $_GET['dir'] == 'asc') {
+					usort($contacts, 'sortByAscName');
+				} elseif ($_GET['row'] == 'age' && $_GET['dir'] == 'young') {
+					usort($contacts, 'sortByYoung');
+				} elseif ($_GET['row'] == 'age' && $_GET['dir'] == 'old') {
+					usort($contacts, 'sortByOld');
+				}
+			}
 
-			
-			
+			// usort($contacts, 'sortByOrder');	
 		?>
-
 
 		<table>
 			<tr>
-				<th>#</th>
-				<th>Name</th>
-				<th>Image</th>
-				<th>Age</th>
+				<th></th>
+				<th></th>
+				<th>
+					<div class="dropdown">
+					<button class="dropbtn">Name<img id='down_arrow' src='images/down.png'></button>
+						<div class="dropdown-content">
+							<a href="http://localhost/contact_database/index.php?row=name&dir=desc">A-Z</a>
+							<a href="http://localhost/contact_database/index.php?row=name&dir=asc">Z-A</a>
+						</div>
+					</div>
+				</th>
+
+				<th>
+					<div class="dropdown">
+					<button class="dropbtn">Age</button>
+						<div class="dropdown-content">
+							<a href="http://localhost/contact_database/index.php?row=age&dir=young">Young to Old</a>
+							<a href="http://localhost/contact_database/index.php?row=age&dir=old">Old to Young</a>
+						</div>
+					</div>
+				</th>
 				<th>Birthday</th>
 				<th>Contact Number</th>
 			</tr>
@@ -80,9 +123,9 @@
 						$src = $contacts[$x]['img_id'];
 
 						echo "<tr>";
-						echo "<td>".($x + 1)."</td>";
-						echo "<td>".$contacts[$x]['name'];
-						echo "<td><img src='$src'></td>";
+						echo "<td id='count_column'>".($x + 1)."</td>";
+						echo "<td id='img_column'><img src='$src'></td>";
+						echo "<td id='name_column'>".$contacts[$x]['name'];
 						echo "<td id='age_column'>".$contacts[$x]['age']."</td>";
 						echo "<td>".$contacts[$x]['bday']."</td>";
 						echo "<td>".$contacts[$x]['num']."</td>";

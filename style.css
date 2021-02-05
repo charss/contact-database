@@ -1,24 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap');
+
 img {
-	width: 100px;
-	height: 100px;
+	width: 70;
+	height: 70px;
 	object-fit: cover;
-	object-position: 50% -20%;
+	object-position: 50% 0%;
+	border-radius: 100%
 }
 
 table {
   	border-collapse: collapse;
 }
 
-table, th, td {
-  	border: 1px solid black;
-}
 
 th {
-	height: 50px;
-	
+	height: 30px;
+	font-family: "Barlow";
+	font-weight: 600;
+	font-size: 15px;
+	background-color: #9cad8e;
+	padding: 2px 12px 2px 12px;
 }
 
+td {
+	font-family: "Barlow";
+	font-weight: 400;
+	text-align: center;
+	border-bottom: 1px solid #dedede;
+	padding: 0px 10px 0px 10px;
+}
 
 #age_column {
 	text-align: center;
+}
+
+#count_column {
+	font-family: "Barlow";
+	font-weight: 400;
+	font-size: 12px;
+	text-align: center;
+	border-bottom: 0px;
+	padding: 0px;
+}
+
+#name_column {
+	padding-left: 10px;
+	text-align: left;
+}
+
+#img_column {
+	padding: 0px;
+}
+
+
+.dropbtn {
+	background-color: transparent;
+	border: none;
+	font-family: "Barlow";
+	font-weight: 600;
+	font-size: 15px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+#down_arrow {
+	object-fit: cover;
+	width: 50px;
+	height: 30px;
 }
