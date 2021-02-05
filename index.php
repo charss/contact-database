@@ -6,7 +6,7 @@
 	<body>
 		<!-- <img src='./images/albert_einstein.jpg'> -->
 		<?php
-		// names, images, age, birthday, and contact number
+			// names, images, age, birthday, and contact number
 			$contacts = array(
 				array("name"   => 'Barack Obama', 
 					  "img_id" => 'images/barack_obama.jpg', 
@@ -67,12 +67,12 @@
 
 		<table>
 			<tr>
-				<th>no.</th>
-				<th>name</th>
-				<th>image</th>
-				<th>age</th>
-				<th>birthday</th>
-				<th>contact number</th>
+				<th>#</th>
+				<th>Name</th>
+				<th>Image</th>
+				<th>Age</th>
+				<th>Birthday</th>
+				<th>Contact Number</th>
 			</tr>
 			<tr>
 				<?php
@@ -83,7 +83,7 @@
 						echo "<td>".($x + 1)."</td>";
 						echo "<td>".$contacts[$x]['name'];
 						echo "<td><img src='$src'></td>";
-						echo "<td>".$contacts[$x]['age']."</td>";
+						echo "<td id='age_column'>".$contacts[$x]['age']."</td>";
 						echo "<td>".$contacts[$x]['bday']."</td>";
 						echo "<td>".$contacts[$x]['num']."</td>";
 						echo "</tr>";
