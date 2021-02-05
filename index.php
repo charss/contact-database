@@ -97,8 +97,9 @@
 				<th></th>
 				<th>
 					<div class="dropdown">
-					<button class="dropbtn">Name<img id='down_arrow' src='images/down.png'></button>
-						<div class="dropdown-content">
+					<button class="dropdown_button">Name<img id='down_arrow' src='images/down.png'></button>
+					
+						<div class="dropdown_cont">
 							<a href="http://localhost/contact_database/index.php?row=name&dir=desc">A-Z</a>
 							<a href="http://localhost/contact_database/index.php?row=name&dir=asc">Z-A</a>
 						</div>
@@ -107,8 +108,8 @@
 
 				<th>
 					<div class="dropdown">
-					<button class="dropbtn">Age</button>
-						<div class="dropdown-content">
+					<button class="dropdown_button">Age<img id='down_arrow' src='images/down.png'></button>
+						<div class="dropdown_cont">
 							<a href="http://localhost/contact_database/index.php?row=age&dir=young">Young to Old</a>
 							<a href="http://localhost/contact_database/index.php?row=age&dir=old">Old to Young</a>
 						</div>
@@ -124,7 +125,7 @@
 
 						echo "<tr>";
 						echo "<td id='count_column'>".($x + 1)."</td>";
-						echo "<td id='img_column'><img src='$src'></td>";
+						echo "<td id='img_column'><img id='picture' src='$src'></td>";
 						echo "<td id='name_column'>".$contacts[$x]['name'];
 						echo "<td id='age_column'>".$contacts[$x]['age']."</td>";
 						echo "<td>".$contacts[$x]['bday']."</td>";
