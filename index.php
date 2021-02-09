@@ -4,7 +4,6 @@
 		<link rel='stylesheet' href='style.css'>
 	</head>
 	<body>
-		<!-- <img src='./images/albert_einstein.jpg'> -->
 		<?php
 			function sortByDescName($a, $b) {
 			    return $a['name'] <=> $b['name'];
@@ -88,7 +87,6 @@
 				}
 			}
 
-			// usort($contacts, 'sortByOrder');	
 		?>
 
 		<table>
@@ -122,7 +120,6 @@
 				<?php
 					for ($x = 0; $x < count($contacts); $x++) {
 						$src = $contacts[$x]['img_id'];
-
 						echo "<tr>";
 						echo "<td id='count_column'>".($x + 1)."</td>";
 						echo "<td id='img_column'><img id='picture' src='$src'></td>";
