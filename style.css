@@ -91,7 +91,7 @@ td {
 	background-color: #ddd;
 }
 
-.dropdown:hover .dropdown-cont {
+.dropdown:hover .dropdown_cont {
 	display: block;
 }
 
